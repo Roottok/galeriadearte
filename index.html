@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, green, black);
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        header ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header ul li a {
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+        header ul li a:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .photo-container {
+            width: calc(25% - 10px);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-container:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Ocultar todas las secciones por defecto */
+        section {
+            display: none;
+        }
+
+        /* Mostrar la sección actual */
+        section:target {
+            display: block;
+        }
+
+        /* Establecer la página de inicio como la predeterminada */
+        body#inicio section#inicio {
+            display: block;
+        }
+    </style>
+</head>
+<body id="inicio">
+
+<header>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Galería de Fotos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</header>
+
+<!-- Página de inicio -->
+<section id="inicio">
+    <div class="container">
+        <h1>Bienvenido a nuestra Galería de Arte</h1>
+        <p>Descubre las obras más impresionantes de nuestros artistas.</p>
+        <a href="#galeria" class="btn">Ver galería</a>
+    </div>
+</section>
+
+<!-- Galería de fotos -->
+<section id="galeria">
+    <div class="container">
+        <h2>Galería de Fotos</h2>
+        <div class="gallery">
+            <div class="photo-container">
+                <img src="pintura1.png" alt="Imagen 1">
+            </div>
+            <div class="photo-container">
+                <img src="pintura2.png" alt="Imagen 2">
+            </div>
+            <div class="photo-container">
+                <img src="pintura3.png" alt="Imagen 3">
+            </div>
+            <div class="photo-container">
+                <img src="pintura4.png" alt="Imagen 4">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Página de contacto -->
+<section id="contacto">
+    <div class="container">
+        <h2>Contacto</h2>
+        <p>Para más información, contáctanos.</p>
+        <form action="enviar.php" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>
